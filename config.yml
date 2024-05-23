@@ -1,0 +1,7 @@
+# открытый yaml-конфиг в локальном каталоге только в качестве демо
+database:
+  host: bvwftlh4lw39ryznsic8-mysql.services.clever-cloud.com
+  port: 3306
+  user: ukmi6lsegnfoydpp
+  password: YdTJhmXhogX9eAXWsIha
+  database: bvwftlh4lw39ryznsic8
