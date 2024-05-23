@@ -50,7 +50,7 @@ class BaseManager:
 
     def check_connections(self):
         """ Проверка соединения - на этой бесплатной БД постоянно отваливается соединение """
-        if not self.connection.is_connected():
+        if not self.connection or not self.connection.is_connected():
             self.connect()
 
     def get_tables(self, silent=False):

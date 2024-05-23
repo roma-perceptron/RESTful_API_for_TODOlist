@@ -1,4 +1,4 @@
-from models import task
+from models import task, new_task
 from flask_restx import Resource
 from setup_app import ns, app, api
 
@@ -10,7 +10,7 @@ class Tasks(Resource):
         """ Получить список всех задач """
         return app.db_manager.get()
 
-    @ns.expect(task)
+    @ns.expect(new_task)
     @ns.marshal_with(task, code=201)
     def post(self):
         """ Добавить новую задачу """
@@ -37,7 +37,7 @@ class Task(Resource):
         else:
             return f'Ошибка при удалении задачи с id={id}. Проверьте идентификатор', 400
 
-    @ns.expect(task)
+    @ns.expect(new_task)
     @ns.marshal_with(task)
     def put(self, id):
         """ Изменить задачу """

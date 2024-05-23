@@ -9,3 +9,10 @@ task = api.model('Task', {
     'created_at': fields.DateTime(description='Дата и время первичной постановки'),
     'updated_at': fields.DateTime(description='Дата и время последнего изменения'),
 })
+
+# Модель для новой задачи / обновления задачи
+new_task = api.model('Task', {
+    'id': fields.Integer(required=True, readonly=True, description='Уникальный идентификатор задачи'),
+    'title': fields.String(description='Название задачи'),
+    'description': fields.String(description='Описание задачи'),
+})
