@@ -13,7 +13,10 @@ class MyFlaskApplication(Flask):
 
 # Создание объекта Flask-Приложения и Flask-RESTx АПИ
 app = MyFlaskApplication('TASK_MASTER')
-api = Api(app, version='1.2', title='Task API', description='API для управления списком задач')
+api = Api(app, version='2024.05.23', title='Task API', description='API для управления списком задач',
+          contact='Github',
+          contact_url='https://github.com/roma-perceptron/RESTful_API_for_TODOlist'
+          )
 
 # формирование конфига для БД и создание менеджера БД
 configs = config.get_configs()
